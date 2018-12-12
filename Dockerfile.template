@@ -1,0 +1,50 @@
+FROM resin/%%RESIN_MACHINE_NAME%%-node:9-stretch
+
+# Install software packages
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  apt-utils \
+  clang \
+  xserver-xorg-core \
+  xserver-xorg-input-all \
+  xserver-xorg-video-fbturbo \
+  xorg \
+  xprintidle \
+  libxcb-image0 \
+  libxcb-util0 \
+  xdg-utils \
+  libdbus-1-3 \
+  libgtk-3-0 \
+  libnotify4 \
+  libgnome-keyring0 \
+  libgconf2-4 \
+  libasound2 \
+  libcap2 \
+  libcups2 \
+  libxtst6 \
+  libxss1 \
+  libnss3 \
+  libsmbclient \
+  libssh-4 \
+  fbset \
+  libexpat-dev \
+  && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Move to app dir
+WORKDIR /usr/src/app
+
+# Move package.json to filesystem
+COPY ./app/package.json ./
+
+# Install npm modules for the application
+RUN JOBS=MAX npm install --production \
+    && npm cache clean --force \
+    && rm -rf /tmp/*
+
+# Move app to filesystem
+COPY ./app ./
+
+## uncomment if you want systemd
+ENV INITSYSTEM on
+
+# Start app
+CMD ["bash", "/usr/src/app/start.sh"]

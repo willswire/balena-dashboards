@@ -1,0 +1,13 @@
+{
+  "name": "balena-dashboards",
+  "version": "0.0.1",
+  "description": "ElectronJS Balena Application",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "latest",
+    "electron-rebuild": "latest",
+    "lockfile": "latest"
+  },
+  "author": "Will Walker",
+  "license": "Apache-2.0"
+}
