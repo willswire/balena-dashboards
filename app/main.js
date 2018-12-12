@@ -43,7 +43,7 @@ app.on('ready', () => {
   });
 
 
-  setInterval(switchDashboard(){
+  setInterval(function() {
     switch (slide % 5) {
       case 0:
         mainWindow.loadURL(electronConfig.DASHBOARD_ONE);
