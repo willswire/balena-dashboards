@@ -5,7 +5,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   apt-utils \
   clang \
   xserver-xorg-core \
-  xserver-xorg-input-all \
   xserver-xorg-video-fbturbo \
   xorg \
   xprintidle \
@@ -29,6 +28,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   libexpat-dev \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Echo commands into the X11 conf file to stay awake
 RUN echo "#!/bin/bash" > /etc/X11/xinit/xserverrc \
     && echo "" >> /etc/X11/xinit/xserverrc \
     && echo 'exec /usr/bin/X -s 0 dpms -nocursor -nolisten' >> /etc/X11/xinit/xserverrc
@@ -36,18 +36,15 @@ RUN echo "#!/bin/bash" > /etc/X11/xinit/xserverrc \
 # Move to app dir
 WORKDIR /usr/src/app
 
-# Move package.json to filesystem
-COPY ./app/package.json ./
+# Move app to filesystem
+COPY ./app ./
 
 # Install npm modules for the application
 RUN JOBS=MAX npm install --production \
     && npm cache clean --force \
     && rm -rf /tmp/*
 
-# Move app to filesystem
-COPY ./app ./
-
-## uncomment if you want systemd
+# Enable systemd
 ENV INITSYSTEM on
 
 # Start app
