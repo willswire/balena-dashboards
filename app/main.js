@@ -12,8 +12,7 @@ const electronConfig = {
   DASHBOARD_ONE: process.env.DASHBOARD_ONE,
   DASHBOARD_TWO: process.env.DASHBOARD_TWO,
   DASHBOARD_THREE: process.env.DASHBOARD_THREE,
-  DASHBOARD_FOUR: process.env.DASHBOARD_FOUR,
-  DASHBOARD_FIVE: process.env.DASHBOARD_FIVE
+  DASHBOARD_FOUR: process.env.DASHBOARD_FOUR
 };
 
 app.on('ready', () => {
@@ -56,13 +55,10 @@ app.on('ready', () => {
         break;
       case 3:
         mainWindow.loadURL(electronConfig.DASHBOARD_FOUR);
-        break;
-      case 4:
-        mainWindow.loadURL(electronConfig.DASHBOARD_FIVE);
     };
     slide++;
-  }, 15000);
+  }, 30000);
 
-  mainWindow.loadURL(electronConfig.DASHBOARD_URL);
+  mainWindow.loadURL(electronConfig.DASHBOARD_ONE);
   console.log("Dashboard Loaded Successfully");
 });
