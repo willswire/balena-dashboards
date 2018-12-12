@@ -8,7 +8,7 @@ const {
 let mainWindow;
 
 const electronConfig = {
-  DASHBOARD_URL: process.env.LAUNCHER_URL
+  DASHBOARD_URL: process.env.DASHBOARD_URL
 };
 
 app.on('ready', () => {
