@@ -4,9 +4,7 @@
   "description": "ElectronJS Balena Application",
   "main": "main.js",
   "dependencies": {
-    "electron": "latest",
-    "electron-rebuild": "latest",
-    "lockfile": "latest"
+    "electron": "latest"
   },
   "author": "Will Walker",
   "license": "Apache-2.0"
