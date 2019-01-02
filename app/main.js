@@ -18,14 +18,9 @@ const electronConfig = {
 
 app.on('ready', () => {
 
-  var screenElectron = electron.screen;
-  var mainScreen = screenElectron.getPrimaryDisplay();
-  var dimensions = mainScreen.size;
-  console.log("The screen dimensions are: " + dimensions.width + "x" + dimensions.height);
-
   mainWindow = new BrowserWindow({
-    width: dimensions.width,
-    height: dimensions.height,
+    width: 1920,
+    height: 1080,
     frame: false,
     kiosk: true,
     webPreferences: {
