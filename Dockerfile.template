@@ -7,7 +7,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   xserver-xorg-core \
   xserver-xorg-video-fbturbo \
   xorg \
-  xprintidle \
   libxcb-image0 \
   libxcb-util0 \
   xdg-utils \
