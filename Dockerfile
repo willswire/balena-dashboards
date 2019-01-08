@@ -1,12 +1,15 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-node:10-stretch
+FROM resin/raspberrypi3-node:10-stretch
 
 # Install software packages
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -qq \
   apt-utils \
   clang \
   xserver-xorg-core \
-  xserver-xorg-video-fbturbo \
+  xserver-xorg-input-all \
+  xserver-xorg-video-fbdev \
+  x11vnc \
   xorg \
+  xprintidle \
   libxcb-image0 \
   libxcb-util0 \
   xdg-utils \
@@ -24,8 +27,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   libsmbclient \
   libssh-4 \
   fbset \
-  libexpat-dev \
-  && apt-get clean && rm -rf /var/lib/apt/lists/*
+  libexpat-dev
 
 # Echo commands into the X11 conf file to stay awake
 RUN echo "#!/bin/bash" > /etc/X11/xinit/xserverrc \
@@ -39,9 +41,7 @@ WORKDIR /usr/src/app
 COPY ./app ./
 
 # Install npm modules for the application
-RUN JOBS=MAX npm install --production \
-    && npm cache clean --force \
-    && rm -rf /tmp/*
+RUN npm install --production
 
 # Enable systemd
 ENV INITSYSTEM on
