@@ -5,7 +5,7 @@ RUN install_packages \
     apt-utils \
     clang \
     xserver-xorg-core \
-    xserver-xorg-video-fbturbo \
+    xserver-xorg-video-fbdev \
     xorg \
     libxcb-image0 \
     libxcb-util0 \
