@@ -1,4 +1,4 @@
-FROM balenalib/raspberrypi3-node:10-stretch-run
+FROM balenalib/raspberrypi3-node:10-buster-run
 
 # Install software packages
 RUN install_packages \
