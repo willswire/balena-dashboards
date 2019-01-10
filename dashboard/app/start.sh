@@ -7,4 +7,5 @@ umount /dev/shm && mount -t tmpfs shm /dev/shm
 rm /tmp/.X0-lock &>/dev/null || true
 
 # Start the UI pointing to ElectronJS
-startx /usr/src/app/node_modules/electron/dist/electron /usr/src/app
+startx /usr/src/app/node_modules/electron/dist/electron /usr/src/app &
+x11vnc -quiet -noxrecord -noxfixes -noxdamage -forever -localhost -passwd facil007ITsupport

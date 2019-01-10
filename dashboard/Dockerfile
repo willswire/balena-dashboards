@@ -6,6 +6,7 @@ RUN install_packages \
     clang \
     xserver-xorg-core \
     xserver-xorg-video-fbdev \
+    x11vnc \
     xorg \
     libxcb-image0 \
     libxcb-util0 \
