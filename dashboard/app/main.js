@@ -37,7 +37,9 @@ app.on('ready', () => {
     console.log(err);
   });
 
-
+  /*
+  // This code is commented out for future additional dashboard slides.
+  // Working on the bus map first
   setInterval(function() {
     switch (slide % 5) {
       case 0:
@@ -54,6 +56,7 @@ app.on('ready', () => {
     };
     slide++;
   }, electronConfig.DASHBOARD_TIMEOUT);
+  */
 
   mainWindow.loadURL(electronConfig.DASHBOARD_ONE);
   console.log("Dashboard Loaded Successfully");
