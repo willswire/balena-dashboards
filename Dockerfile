@@ -7,7 +7,6 @@ RUN install_packages \
     xserver-xorg-core \
     xserver-xorg-video-fbturbo \
     xorg \
-    xprintidle \
     libxcb-image0 \
     libxcb-util0 \
     xdg-utils \
