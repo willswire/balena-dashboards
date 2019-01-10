@@ -1,15 +1,12 @@
-FROM resin/raspberrypi3-node:10-stretch
+FROM balenalib/raspberrypi3-node:10-stretch-run
 
 # Install software packages
-RUN apt-get update && apt-get install -qq \
+RUN install_packages \
   apt-utils \
   clang \
   xserver-xorg-core \
-  xserver-xorg-input-all \
-  xserver-xorg-video-fbdev \
-  x11vnc \
+  xserver-xorg-video-fbturbo \
   xorg \
-  xprintidle \
   libxcb-image0 \
   libxcb-util0 \
   xdg-utils \
@@ -42,9 +39,6 @@ COPY ./app ./
 
 # Install npm modules for the application
 RUN npm install --production
-
-# Enable systemd
-ENV INITSYSTEM on
 
 # Start app
 CMD ["bash", "/usr/src/app/start.sh"]
