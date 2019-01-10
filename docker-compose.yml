@@ -1,6 +1,6 @@
 version: '2'
 services:
-  electron:
+  dashboard:
     build: ./dashboard
     ports:
       - "5900"
