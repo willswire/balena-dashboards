@@ -1,0 +1,16 @@
+FROM balenalib/raspberrypi3-alpine-python:run
+
+# Update software packages
+RUN install_packages \
+    git \
+    iptables \
+    procps
+
+# Pull down noVNC
+RUN git clone https://github.com/novnc/noVNC
+
+# Copy over script
+COPY ./start.sh ./
+
+# Start app
+CMD ["bash", "start.sh"]

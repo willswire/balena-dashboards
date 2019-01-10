@@ -1,0 +1,16 @@
+version: '2'
+services:
+  electron:
+    build: ./dahboard
+    ports:
+      - "5900"
+    network_mode: host
+    privileged: true
+    restart: alway
+  vnc:
+    build: ./vnc
+    depends_on:
+      - dashboard
+    ports:
+      - "80"
+    network_mode: host
