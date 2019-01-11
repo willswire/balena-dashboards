@@ -1,4 +1,4 @@
-FROM balenalib/raspberrypi3-node:10-buster
+FROM balenalib/raspberrypi3-node:buster
 
 # Install software packages
 RUN install_packages \
