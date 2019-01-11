@@ -1,31 +1,18 @@
-FROM balenalib/raspberrypi3-node:10-buster-run
+FROM balenalib/raspberrypi3-node:10-buster
 
 # Install software packages
 RUN install_packages \
-    apt-utils \
-    clang \
-    xserver-xorg-core \
-    xserver-xorg-video-fbdev \
-    x11vnc \
+  # X Dependencies
     xorg \
-    libxcb-image0 \
-    libxcb-util0 \
-    xdg-utils \
-    libdbus-1-dev \
+    x11vnc \
+    xprintidle \
+  # ElectronJS Dependencies
+    clang \
+    libnss3-dev \
     libgtk-3-dev \
     libnotify-dev \
-    libgnome-keyring-dev \
-    libgconf2-dev \
     libasound2-dev \
-    libcap-dev \
-    libcups2-dev \
-    libxtst-dev \
-    libxss1 \
-    libnss3-dev \
-    libsmbclient \
-    libssh-4 \
-    fbset \
-    libexpat-dev
+    gnome-keyring
 
 # Echo commands into the X11 conf file to stay awake
 RUN echo "#!/bin/bash" > /etc/X11/xinit/xserverrc \
@@ -39,7 +26,7 @@ WORKDIR /usr/src/app
 COPY ./app ./
 
 # Install npm modules for the application
-RUN npm install --production
+RUN npm install
 
 # Start app
 CMD ["bash", "start.sh"]
