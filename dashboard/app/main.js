@@ -41,7 +41,7 @@ app.on('ready', () => {
   // This code is commented out for future additional dashboard slides.
   // Working on the bus map first
   setInterval(function() {
-    switch (slide % 5) {
+    switch (slide % 4) {
       case 0:
         mainWindow.loadURL(electronConfig.DASHBOARD_ONE);
         break;
