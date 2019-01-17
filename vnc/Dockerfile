@@ -1,4 +1,4 @@
-FROM balenalib/raspberrypi3-alpine-python:run
+FROM balenalib/amd64-alpine-python:latest
 
 # Update software packages
 RUN install_packages \
