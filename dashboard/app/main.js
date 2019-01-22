@@ -33,13 +33,10 @@ app.on('ready', () => {
     console.log(err);
   });
 
-  // This code is commented out for future additional dashboard slides.
-  // Working on the bus map first
   setInterval(function() {
     mainWindow.loadURL(SLIDE_URLS[currentSlide % SLIDE_COUNT]);
     currentSlide++;
   }, TIMEOUT);
 
-  mainWindow.loadURL(electronConfig.DASHBOARD_ONE);
   console.log("Dashboard Loaded Successfully");
 });
