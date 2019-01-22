@@ -1,4 +1,4 @@
-FROM balenalib/BALENA_ARCH-alpine-python
+FROM balenalib/amd64-alpine-python
 
 # Update software packages
 RUN install_packages \
