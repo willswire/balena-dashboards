@@ -1,4 +1,4 @@
-FROM balenalib/%%BALENA_ARCH%%-alpine-python
+FROM balenalib/%%BALENA_MACHINE_NAME%%-alpine-python
 
 # Update software packages
 RUN install_packages \
