@@ -1,4 +1,4 @@
-FROM balenalib/amd64-alpine-python:latest
+FROM balenalib/amd64-alpine-python
 
 # Update software packages
 RUN install_packages \

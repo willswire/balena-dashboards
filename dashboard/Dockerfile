@@ -1,4 +1,4 @@
-FROM balenalib/amd64-node:latest-buster
+FROM balenalib/amd64-node:buster
 
 # Install software packages
 RUN install_packages \
