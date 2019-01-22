@@ -7,9 +7,8 @@ const {
 
 let mainWindow;
 const TIMEOUT = process.env.TIMEOUT;
-const SLIDE_URLS = process.env.SLIDE_URLS;
-const SLIDE_COUNT = SLIDE_URLS.length;
-var currentSlide = 0;
+const SLIDE_URLS = process.env.SLIDE_URLS.split(' ');
+var currentSlide = 1;
 
 // Main Function
 app.on('ready', () => {
@@ -33,10 +32,11 @@ app.on('ready', () => {
     console.log(err);
   });
 
+  mainWindow.loadURL(SLIDE_URLS[0]);
+
   setInterval(function() {
-    mainWindow.loadURL(SLIDE_URLS[currentSlide % SLIDE_COUNT]);
+    mainWindow.loadURL(SLIDE_URLS[currentSlide % SLIDE_URLS.length]);
     currentSlide++;
   }, TIMEOUT);
 
-  console.log("Dashboard Loaded Successfully");
 });
