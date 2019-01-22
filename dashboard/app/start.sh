@@ -8,4 +8,4 @@ rm /tmp/.X0-lock &>/dev/null || true
 
 # Start the UI pointing to ElectronJS
 startx /usr/src/app/node_modules/electron/dist/electron /usr/src/app &
-x11vnc -quiet -noxrecord -noxfixes -noxdamage -forever -localhost -passwd facil007ITsupport
+x11vnc -quiet -noxrecord -noxfixes -noxdamage -forever -localhost -passwd $NO_VNCPASSWORD
