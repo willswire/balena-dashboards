@@ -6,7 +6,7 @@ const {
 } = electron;
 
 let mainWindow;
-const TIMEOUT = process.env.TIMEOUT;
+const TIMEOUT = (process.env.TIMEOUT * 1000);
 const SLIDE_URLS = process.env.SLIDE_URLS.split(' ');
 var currentSlide = 1;
 
