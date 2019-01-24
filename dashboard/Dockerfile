@@ -5,7 +5,6 @@ RUN install_packages \
   # X Dependencies
     xorg \
     x11vnc \
-    xprintidle \
   # ElectronJS Dependencies
     clang \
     libnss3-dev \
