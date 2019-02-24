@@ -1,10 +1,11 @@
-FROM balenalib/amd64-node:buster
+FROM balenalib/%%BALENA_MACHINE_NAME%%-node:buster
 
 # Install software packages
 RUN install_packages \
   # X Dependencies
     xorg \
     x11vnc \
+    xprintidle \
   # ElectronJS Dependencies
     clang \
     libnss3-dev \

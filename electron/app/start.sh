@@ -12,4 +12,4 @@ x11vnc -storepasswd $NOVNC_PASSWORD ~/.x11vnc/passwd
 
 # Start the UI pointing to ElectronJS
 startx /usr/src/app/node_modules/electron/dist/electron /usr/src/app &
-x11vnc -quiet -noxrecord -noxfixes -noxdamage -forever -localhost -rfbauth ~/.x11vnc/passwd
+x11vnc -find -quiet -noxrecord -noxfixes -noxdamage -forever -localhost -rfbauth ~/.x11vnc/passwd

@@ -2,7 +2,7 @@
 
 The [balena-dash](https://github.com/balena-io-projects/balena-dash) project is great! If you haven't yet had the chance to visit the repo, you certainly should before checking out this one. The main difference between this project and that one, is that **this project utilizes ElectronJS** to display webpages and other slides. Some things to note about this project:
 
- - Performance will be limited on Raspberry Pi devices due to constraints that come with Chromium.  Plain and simple: Raspberry Pi GPU + Chromium < WPE performance that the balena-dash project offers.
+ - Performance will be limited on Raspberry Pi devices due to constraints that come with Chromium.  Plain and simple: Raspberry Pi GPU + Chromium < WPE performance that the balena-dash project offers. That being said, the chromium experience offers better support for rending elements which require 'supported browsers'.
  - The latest version of ElectronJS (4.0.0+) will require at least Debian Buster to be installed, due to glibc requirements.
 
 You may be asking,*"So why would I choose this project instead of balena-dash?"*
@@ -30,7 +30,6 @@ What things you need to deploy this code to your device:
 git clone https://github.com/willswire/balena-dashboards.git
 git remote add balena <get URL by clicking the ? in the top corner of your application dashboard>
 git push balena master
-
 ```
 
 ## Configuration
@@ -40,10 +39,10 @@ The following `Enviroment Variables` must be set within Application > Device und
 | Name             | Value                                                        |
 | ---------------- | ------------------------------------------------------------ |
 | `SLIDE_URLS`     | `https://www.google.com https://www.apple.com` _[space-separated URLs]_ |
-| `TIMEOUT`        | `60` _[integer which represents number of seconds]_          |
+| `TIMEOUT`        | `60,30` _[comma-separated integers which represents number of seconds for each URL]_ |
 | `NOVNC_PASSWORD` | `defaultpassword` *[obviously change this to something different]* |
 
-In order to view the device remotely from within your broswer, enable the public device URL within the device summary page.  Then, you can simply click the link and login using the password set above.
+In order to view the device remotely from within your browser, enable the public device URL within the device summary page.  Then, you can simply click the link and login using the password set above.
 
 ## Built With
 
