@@ -1,6 +1,6 @@
 {
   "name": "balena-dashboards",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "ElectronJS Balena Application",
   "main": "main.js",
   "dependencies": {
