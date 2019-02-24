@@ -1,5 +1,7 @@
 # balena-dashboard
 
+**You MUST set the enviroment variables as outlined below**
+
 The [balena-dash](https://github.com/balena-io-projects/balena-dash) project is great! If you haven't yet had the chance to visit the repo, you certainly should before checking out this one. The main difference between this project and that one, is that **this project utilizes ElectronJS** to display webpages and other slides. Some things to note about this project:
 
  - Performance will be limited on Raspberry Pi devices due to constraints that come with Chromium.  Plain and simple: Raspberry Pi GPU + Chromium < WPE performance that the balena-dash project offers. That being said, the chromium experience offers better support for rending elements which require 'supported browsers'.
