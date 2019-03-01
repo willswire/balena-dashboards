@@ -2,7 +2,7 @@
 const electron = require('electron');
 const {
 	app,
-	BrowserWindow,
+	BrowserWindow
 } = electron;
 
 let mainWindow;
@@ -16,6 +16,9 @@ var currentTimeout = 0;
 // Slide changing Function
 var slideChanger = function () {
 	mainWindow.loadURL(SLIDE_URLS[currentSlide % SLIDE_URLS.length]);
+	mainWindow.webContents.on('did-finish-load', function () {
+		mainWindow.webContents.insertCSS('html,body{ height: 100vh !important; }')
+	});
 	currentTimeout = parseInt(TIMEOUT[currentTime % TIMEOUT.length]) * 1000;
 	currentSlide++;
 	currentTime++;
@@ -39,9 +42,7 @@ app.on('ready', () => {
 			sandbox: false,
 			overlayScrollbars: false,
 			nodeIntegration: false,
-			allowRunningInsecureContent: true,
-			plugins: true,
-			nativeWindowOpen: true
+			plugins: true
 		}
 	});
 
