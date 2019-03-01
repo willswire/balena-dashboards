@@ -1,8 +1,8 @@
 // Declare constants required for ElectronJS to run properly
 const electron = require('electron');
 const {
-  app,
-  BrowserWindow,
+	app,
+	BrowserWindow,
 } = electron;
 
 let mainWindow;
@@ -14,36 +14,41 @@ var currentTime = 0;
 var currentTimeout = 0;
 
 // Slide changing Function
-var slideChanger = function() {
-  mainWindow.loadURL(SLIDE_URLS[currentSlide % SLIDE_URLS.length]);
-  currentTimeout = parseInt(TIMEOUT[currentTime % TIMEOUT.length]) * 1000;
-  currentSlide++;
-  currentTime++;
-  setTimeout(slideChanger, currentTimeout);
+var slideChanger = function () {
+	mainWindow.loadURL(SLIDE_URLS[currentSlide % SLIDE_URLS.length]);
+	currentTimeout = parseInt(TIMEOUT[currentTime % TIMEOUT.length]) * 1000;
+	currentSlide++;
+	currentTime++;
+	setTimeout(slideChanger, currentTimeout);
 }
 
 // Main Function
 app.on('ready', () => {
 
-  mainWindow = new BrowserWindow({
-    width: 1920,
-    height: 1080,
-    frame: false,
-    kiosk: true,
-    webPreferences: {
-      sandbox: false,
-      overlayScrollbars: false,
-      nodeIntegration: false,
-      allowRunningInsecureContent: true,
-      plugins: true,
-      nativeWindowOpen: true
-    }
-  });
+	var screenElectron = electron.screen;
+	var mainScreen = screenElectron.getPrimaryDisplay();
+	var dimensions = mainScreen.size;
+	console.log("The screen dimensions are: " + dimensions.width + "x" + dimensions.height);
 
-  process.on('uncaughtException', (err) => {
-    console.log(err);
-  });
+	mainWindow = new BrowserWindow({
+		width: dimensions.width,
+		height: dimensions.height,
+		frame: false,
+		kiosk: true,
+		webPreferences: {
+			sandbox: false,
+			overlayScrollbars: false,
+			nodeIntegration: false,
+			allowRunningInsecureContent: true,
+			plugins: true,
+			nativeWindowOpen: true
+		}
+	});
 
-  setTimeout(slideChanger, currentTimeout);
+	process.on('uncaughtException', (err) => {
+		console.log(err);
+	});
+
+	setTimeout(slideChanger, currentTimeout);
 
 });
