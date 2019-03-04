@@ -1,41 +1,42 @@
-// Declare constants required for ElectronJS to run properly
+console.log('Starting Dashboard...');
 const electron = require('electron');
 const {
 	app,
-	BrowserWindow
+	BrowserWindow,
+	globalShortcut
 } = electron;
 
 let mainWindow;
 const TIMEOUT = process.env.TIMEOUT.split(',');
-console.log("After storing the env variable: " + TIMEOUT);
 const SLIDE_URLS = process.env.SLIDE_URLS.split(' ');
 var currentSlide = 0;
 var currentTime = 0;
 var currentTimeout = 0;
+var screenDimensions;
 
-// Slide changing Function
-var slideChanger = function () {
+// Slide Function
+function slideChanger() {
 	mainWindow.loadURL(SLIDE_URLS[currentSlide % SLIDE_URLS.length]);
-	mainWindow.webContents.on('did-finish-load', function () {
-		mainWindow.webContents.insertCSS('html,body{ height: 100vh !important; }')
-	});
 	currentTimeout = parseInt(TIMEOUT[currentTime % TIMEOUT.length]) * 1000;
 	currentSlide++;
 	currentTime++;
 	setTimeout(slideChanger, currentTimeout);
 }
 
+function prepareScreen() {
+	var screenElectron = electron.screen;
+	var mainScreen = screenElectron.getPrimaryDisplay();
+	screenDimensions = mainScreen.size;
+}
+
 // Main Function
 app.on('ready', () => {
 
-	var screenElectron = electron.screen;
-	var mainScreen = screenElectron.getPrimaryDisplay();
-	var dimensions = mainScreen.size;
-	console.log("The screen dimensions are: " + dimensions.width + "x" + dimensions.height);
+	prepareScreen();
 
 	mainWindow = new BrowserWindow({
-		width: dimensions.width,
-		height: dimensions.height,
+		width: screenDimensions.width,
+		height: screenDimensions.height,
 		frame: false,
 		kiosk: true,
 		webPreferences: {
@@ -50,6 +51,6 @@ app.on('ready', () => {
 		console.log(err);
 	});
 
-	setTimeout(slideChanger, currentTimeout);
+	slideChanger();
 
 });
