@@ -2,6 +2,11 @@
 
 All entries are made manually. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.1.0 - 2019-3-3
+
+-   Rework ElectronJS code to allow for better env storage [Will Walker]
+-   Set default env vars and use nice splash screen [Will Walker]
+
 ## 2.0.1 - 2019-3-3
 
 -   Rename containers [Will Walker]

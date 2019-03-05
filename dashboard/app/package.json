@@ -1,11 +1,21 @@
 {
   "name": "balena-dashboards",
-  "version": "1.0.1",
+  "version": "2.1.0",
   "description": "ElectronJS Balena Application",
   "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/wills-wire/balena-dashboards",
+  "keywords": [
+    "Electron",
+    "Balena",
+    "dashboard",
+    "Raspberry Pi"
+  ],
+  "author": "Will Walker",
+  "license": "Apache-2.0",
   "dependencies": {
     "electron": "latest"
-  },
-  "author": "Will Walker",
-  "license": "Apache-2.0"
+  }
 }
