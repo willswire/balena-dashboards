@@ -2,6 +2,10 @@
 
 All entries are made manually. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.1.1 - 2019-3-5
+
+-   Clean up splash code [Will Walker]
+
 ## 2.1.0 - 2019-3-3
 
 -   Rework ElectronJS code to allow for better env storage [Will Walker]
