@@ -1,7 +1,5 @@
 # balena-dashboard
 
-**You MUST set the enviroment variables as outlined below**
-
 The [balena-dash](https://github.com/balena-io-projects/balena-dash) project is great! If you haven't yet had the chance to visit the repo, you certainly should before checking out this one. The main difference between this project and that one, is that **this project utilizes ElectronJS** to display webpages and other slides. Some things to note about this project:
 
  - Performance will be limited on Raspberry Pi devices due to constraints that come with Chromium.  Plain and simple: Raspberry Pi GPU + Chromium < WPE performance that the balena-dash project offers. That being said, the chromium experience offers better support for rending elements which require 'supported browsers'.
@@ -40,8 +38,10 @@ The following `Enviroment Variables` must be set within Application > Device und
 
 | Name             | Value                                                        |
 | ---------------- | ------------------------------------------------------------ |
-| `SLIDE_URLS`     | `https://www.google.com https://www.apple.com` _[space-separated URLs]_ |
-| `TIMEOUT`        | `60,30` _[comma-separated integers which represents number of seconds for each URL]_ |
+| `SLIDECOUNT`     | `integer value representing how many slides are set`  |
+| `SLIDE_0`        | `https://www.google.com` _[fully qualified URLs]_            |
+| `TIME_0`         | `60` _[integer which represents number of seconds for URL]_  |
+| `SLIDE_[...]`    | `up to 10 URLs and timeout values`  |
 | `NOVNC_PASSWORD` | `defaultpassword` *[obviously change this to something different]* |
 
 In order to view the device remotely from within your browser, enable the public device URL within the device summary page.  Then, you can simply click the link and login using the password set above.
