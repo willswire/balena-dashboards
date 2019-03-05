@@ -1,4 +1,4 @@
-# balena-dashboard
+# dashboards
 
 The [balena-dash](https://github.com/balena-io-projects/balena-dash) project is great! If you haven't yet had the chance to visit the repo, you certainly should before checking out this one. The main difference between this project and that one, is that **this project utilizes ElectronJS** to display webpages and other slides. Some things to note about this project:
 
@@ -7,8 +7,8 @@ The [balena-dash](https://github.com/balena-io-projects/balena-dash) project is 
 
 You may be asking,*"So why would I choose this project instead of balena-dash?"*
 
-- Infinate URLs/webpages to load
-- Custom timeout value
+- Multiple URLs/webpages to load
+- Custom timeout values for each URL
 - Support for remote screen control/support/viewing
 
 ## Getting Started
