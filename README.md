@@ -27,7 +27,7 @@ What things you need to deploy this code to your device:
 - Download the code for this project from GitHub, and push to your application, using the code below
 
 ```
-git clone https://github.com/willswire/balena-dashboards.git
+git clone https://github.com/willswire/dashboards.git
 git remote add balena <get URL by clicking the ? in the top corner of your application dashboard>
 git push balena master
 ```
