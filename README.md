@@ -1,14 +1,12 @@
-# balena-dashboard
+# dashboards
 
-The [balena-dash](https://github.com/balena-io-projects/balena-dash) project is great! If you haven't yet had the chance to visit the repo, you certainly should before checking out this one. The main difference between this project and that one, is that **this project utilizes ElectronJS** to display webpages and other slides. Some things to note about this project:
+This project is a simple solution for managing multiple digital signage displays, dashboards, and other dynamic statistical data on raspberry-pi (or x86-x64 arch) powered displays, via one central admin panel. This project is intended for use in conjunction with balena.io (see below for link and account setup instructions).
 
- - Performance will be limited on Raspberry Pi devices due to constraints that come with Chromium.  Plain and simple: Raspberry Pi GPU + Chromium < WPE performance that the balena-dash project offers. That being said, the chromium experience offers better support for rending elements which require 'supported browsers'.
- - The latest version of ElectronJS (4.0.0+) will require at least Debian Buster to be installed, due to glibc requirements.
+You may be asking,*"What makes this dashboard project better than others?"*
 
-You may be asking,*"So why would I choose this project instead of balena-dash?"*
-
-- Infinate URLs/webpages to load
-- Custom timeout value
+- Managed through balena.io
+- Multiple URLs/webpages to load
+- Custom timeout values for each URL
 - Support for remote screen control/support/viewing
 
 ## Getting Started
@@ -27,7 +25,7 @@ What things you need to deploy this code to your device:
 - Download the code for this project from GitHub, and push to your application, using the code below
 
 ```
-git clone https://github.com/willswire/balena-dashboards.git
+git clone https://github.com/willswire/dashboards.git
 git remote add balena <get URL by clicking the ? in the top corner of your application dashboard>
 git push balena master
 ```
