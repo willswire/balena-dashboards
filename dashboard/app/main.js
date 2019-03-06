@@ -54,6 +54,7 @@ function slideChanger() {
 	mainWindow.loadURL(SLIDES[currentSlide % SLIDES.length]);
 	currentTimeout = parseInt(TIMES[currentTime % TIMES.length]) * 1000;
 	currentSlide++;
+	console.log("The current slide is: " + currentSlide)
 	currentTime++;
 	setTimeout(slideChanger, currentTimeout);
 }

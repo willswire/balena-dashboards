@@ -38,7 +38,7 @@ The following `Enviroment Variables` must be set within Application > Device und
 
 | Name             | Value                                                        |
 | ---------------- | ------------------------------------------------------------ |
-| `SLIDECOUNT`     | `integer value representing how many slides are set`  |
+| `SLIDE_COUNT`     | `integer value representing how many slides are set`  |
 | `SLIDE_0`        | `https://www.google.com` _[fully qualified URLs]_            |
 | `TIME_0`         | `60` _[integer which represents number of seconds for URL]_  |
 | `SLIDE_[...]`    | `up to 10 URLs and timeout values`  |
