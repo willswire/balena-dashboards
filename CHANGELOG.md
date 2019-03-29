@@ -2,32 +2,37 @@
 
 All entries are made manually. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.1.2 - 2019-3-6
+
+- Clean up script code [Will Walker]
+- Remove deprecated X flags [Will Walker]
+
 ## 2.1.1 - 2019-3-5
 
--   Clean up splash code [Will Walker]
+- Clean up splash code [Will Walker]
 
 ## 2.1.0 - 2019-3-3
 
--   Rework ElectronJS code to allow for better env storage [Will Walker]
--   Set default env vars and use nice splash screen [Will Walker]
+- Rework ElectronJS code to allow for better env storage [Will Walker]
+- Set default env vars and use nice splash screen [Will Walker]
 
 ## 2.0.1 - 2019-3-3
 
--   Rename containers [Will Walker]
--   Clean up electron scripts [Will Walker]
+- Rename containers [Will Walker]
+- Clean up electron scripts [Will Walker]
 
 ## 2.0.0 - 2019-2-24
 
--   Introduces support for devices other than amd64  by replacing FROM
-    arch line with %%BALENA_MACHINE_NAME%% [Will Walker]
+- Introduces support for devices other than amd64 by replacing FROM
+  arch line with %%BALENA_MACHINE_NAME%% [Will Walker]
 
 ## 1.0.1 - 2019-1-28
 
--   Extended stability for x11vnc using -find flag [Will Walker]
--   Create function for infinite looping [CJ Lambert & Will Walker]
+- Extended stability for x11vnc using -find flag [Will Walker]
+- Create function for infinite looping [CJ Lambert & Will Walker]
 
 ## 1.0.0 - 2019-1-10
 
--   Initial commit for all code.  Basing off of multi-container image used for
-    timestations.  Starting with Debian Buster due to expected release date by
-    end of semester. [Will Walker]
+- Initial commit for all code. Basing off of multi-container image used for
+  timestations. Starting with Debian Buster due to expected release date by
+  end of semester. [Will Walker]
