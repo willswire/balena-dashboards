@@ -22,12 +22,11 @@ What things you need to deploy this code to your device:
 - Add your device and download the OS.  Make sure to specify the wifi information needed to connect your device
 - Flash your SD card ([balenaEtcher](https://www.balena.io/etcher) is recommended) and boot the device
 - Ensure the device shows up in your application dashboard
-- Download the code for this project from GitHub, and push to your application, using the code below
+- Download the code for this project from GitHub, and push to your application, using the [balena-cli tool](https://www.balena.io/docs/reference/cli/)
 
 ```
 git clone https://github.com/willswire/dashboards.git
-git remote add balena <get URL by clicking the ? in the top corner of your application dashboard>
-git push balena master
+balena push *application-name*
 ```
 
 ## Configuration
