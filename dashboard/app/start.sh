@@ -31,7 +31,7 @@ x11vnc -quiet -storepasswd $NOVNC_PASSWORD ~/.x11vnc/passwd
 echo "Setup complete"
 
 # Start the UI pointing to ElectronJS
-startx /usr/src/app/node_modules/electron/dist/electron /usr/src/app &
+startx /usr/src/app/node_modules/electron/dist/electron /usr/src/app --no-sandbox &
 P1=$!
 x11vnc -find -quiet -forever -localhost -rfbauth ~/.x11vnc/passwd &
 P2=$!

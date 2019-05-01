@@ -2,6 +2,10 @@
 
 All entries are made manually. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.0.0 - 2019-5-1
+- Updated Electron to v5.0 [Will Walker]
+- Included --no-sandbox flag with startx electron command [Will Walker]
+
 ## 2.1.2 - 2019-3-6
 
 - Clean up script code [Will Walker]
