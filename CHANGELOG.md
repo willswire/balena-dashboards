@@ -2,6 +2,10 @@
 
 All entries are made manually. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.1.0 - 2019-5-23
+- Include zoom functionality via `ZOOM` Environment Variable
+- Include Safety Alert functionality via `CAMPUS_EMERGENCY` Environment Variable
+
 ## 3.0.0 - 2019-5-1
 - Updated Electron to v5.0 [Will Walker]
 - Included --no-sandbox flag with startx electron command [Will Walker]

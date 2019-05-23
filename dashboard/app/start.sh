@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # Echo the localhost value
 echo "Setting hostname..."
@@ -12,8 +12,8 @@ echo "Removing tmp data..."
 # Remove any temp data
 rm /tmp/.X0-lock &>/dev/null || true
 
-# Check to see if the NOVNC_PASSWORD has been set
-if [ -z "$NOVNC_PASSWORD" ]; then
+# Check to see if the noVNC_PASSWORD has been set
+if [[ -z "${NOVNC_PASSWORD}" ]]; then
       while :; do
             echo "WARNING! - \$NOVNC_PASSWORD is empty and needs to be set"
             sleep 30
@@ -26,7 +26,7 @@ fi
 # Set the X11VNC Password
 echo "Storing X11 VNC password..."
 mkdir ~/.x11vnc
-x11vnc -quiet -storepasswd $NOVNC_PASSWORD ~/.x11vnc/passwd
+x11vnc -quiet -storepasswd ${NOVNC_PASSWORD} ~/.x11vnc/passwd
 
 echo "Setup complete"
 
@@ -35,4 +35,4 @@ startx /usr/src/app/node_modules/electron/dist/electron /usr/src/app --no-sandbo
 P1=$!
 x11vnc -find -quiet -forever -localhost -rfbauth ~/.x11vnc/passwd &
 P2=$!
-wait $P1 $P2
+wait ${P1} ${P2}
