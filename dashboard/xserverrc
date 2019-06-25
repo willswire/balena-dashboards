@@ -1,0 +1,2 @@
+#!/bin/bash
+exec /usr/bin/X -s 0 -nocursor

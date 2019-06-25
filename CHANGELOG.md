@@ -2,6 +2,9 @@
 
 All entries are made manually. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 4.0.0 - 2019-6-25
+- Clean up Dockerfile.template
+
 ## 3.1.0 - 2019-5-23
 - Include zoom functionality via `ZOOM` Environment Variable
 - Include Safety Alert functionality via `CAMPUS_EMERGENCY` Environment Variable
