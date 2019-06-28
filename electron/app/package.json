@@ -16,6 +16,8 @@
   "author": "Will Walker",
   "license": "Apache-2.0",
   "dependencies": {
-    "electron": "latest"
+    "electron": "latest",
+    "env-object-parser": "latest",
+    "number-to-words": "latest"
   }
 }

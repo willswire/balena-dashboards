@@ -1,6 +1,6 @@
-# dashboards
+# balena-dashboards
 
-This project is a simple solution for managing multiple digital signage displays, dashboards, and other dynamic statistical data on raspberry-pi (or x86-x64 arch) powered displays, via one central admin panel. This project is intended for use in conjunction with balena.io (see below for link and account setup instructions).
+> This project is a simple solution for managing multiple digital signage displays, dashboards, and other dynamic statistical data on raspberry-pi (or x86-x64 arch) powered displays, via one central admin panel. This project is intended for use in conjunction with balena.io (see below for link and account setup instructions).
 
 You may be asking,*"What makes this dashboard project better than others?"*
 
@@ -8,6 +8,7 @@ You may be asking,*"What makes this dashboard project better than others?"*
 - Multiple URLs/webpages to load
 - Custom timeout values for each URL
 - Support for remote screen control/support/viewing
+- Fast load/runtime due to multi-threaded creation of browser windows
 
 ## Getting Started
 
@@ -15,7 +16,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to deploy this code to your device:
+Things you need to deploy this code to your device:
 
 - Sign up for a free account with balenaCloud [here](https://dashboard.balena-cloud.com/signup?utm_source=efp&utm_campaign=balenadash)
 - Create an application
@@ -35,10 +36,12 @@ The following `Enviroment Variables` must be set within Application > Device und
 
 | Name             | Value                                                        |
 | ---------------- | ------------------------------------------------------------ |
-| `SLIDE_COUNT`     | `integer value representing how many slides are set`  |
-| `SLIDE_0`        | `https://www.google.com` _[fully qualified URLs]_            |
-| `TIME_0`         | `60` _[integer which represents number of seconds for URL]_  |
-| `SLIDE_[...]`    | `up to 10 URLs and timeout values`  |
+| `URL_ONE`        | `https://www.google.com` _[fully qualified URL to load]_            |
+| `TIME_ONE`         | `60` _[integer which represents number of seconds to show URL]_  |
+| `URL_TWO`        |            |
+| `TIME_TWO`       |            |
+| `URL_[...]`    | `infinte URLs to load`  |
+| `TIME_[...]`    | `corresponding time values for each URL`  |
 | `NOVNC_PASSWORD` | `defaultpassword` *[obviously change this to something different]* |
 
 In order to view the device remotely from within your browser, enable the public device URL within the device summary page.  Then, you can simply click the link and login using the password set above.

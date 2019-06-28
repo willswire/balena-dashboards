@@ -5,7 +5,6 @@ RUN install_packages \
   # X Dependencies
     xorg \
     x11vnc \
-    cups-client \
     xserver-xorg-video-all \
   # ElectronJS Dependencies
     clang \
@@ -14,9 +13,6 @@ RUN install_packages \
     libnotify-dev \
     libasound2-dev \
     gnome-keyring
-
-# Echo commands into the X11 conf file to stay awake
-COPY ./xserverrc /etc/X11/xinit/xserverrc
 
 # Move to app dir
 WORKDIR /usr/src/app

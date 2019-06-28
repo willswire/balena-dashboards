@@ -2,6 +2,16 @@
 
 All entries are made manually. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 5.0.0 - 2019-6-28
+- Complete restructure of main.js
+    - Utilization of powerSaveBlocker to keep display alive [Kyle O'Donnell]
+    - Instead of loading x URLs for one browserWindow, load x number of browserWindows and cycle through them [Will Walker]
+    - Dynamic loading of environment variables [CJ Lambert]
+    - Renaming of slide variables `SLIDE_1` -> `URL_ONE` [CJ Lambert]
+    - Renaming of slide variables `TIME_1` -> `TIME_ONE` [CJ Lambert]
+- Removal of launcher HTML files [Will Walker]
+- Removal of `CAMPUS_EMERGENCY` Environment Variable [Will Walker]
+
 ## 4.0.0 - 2019-6-25
 - Clean up Dockerfile.template
 
