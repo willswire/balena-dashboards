@@ -1,21 +1,18 @@
 #!/bin/bash
 
-# Echo the localhost value
-echo "Setting hostname..."
-echo "127.0.0.1 $HOSTNAME" >> /etc/hosts
-
 # By default docker gives us 64MB of shared memory size but we need more for visuals
 umount /dev/shm && mount -t tmpfs shm /dev/shm
 echo "Increased memory allocation"
 
-echo "Removing tmp data..."
 # Remove any temp data
 rm /tmp/.X0-lock &>/dev/null || true
+echo "Removed temporary startx data"
 
 # Check to see if the noVNC_PASSWORD has been set
 if [[ -z "${NOVNC_PASSWORD}" ]]; then
       while :; do
-            echo "WARNING! - \$NOVNC_PASSWORD is empty and needs to be set"
+            echo "Dashboard failed to start"
+            echo -e "\e[33mThe \$NOVNC_PASSWORD variable is empty and needs to be set\e[0m"
             sleep 30
       done
 

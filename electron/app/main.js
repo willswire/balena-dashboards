@@ -1,9 +1,9 @@
-console.log("Starting Dashboard...");
+console.log("Starting dashboard...");
 const electron = require("electron");
 const envObjectParser = require('env-object-parser'); //allows for the searching of specific ENVs
 const converter = require('number-to-words'); //Used for Conversion of 1s and 2s to "One"s and "Two"s
 // noinspection JSUnusedLocalSymbols
-const {app, BrowserWindow, powerSaveBlocker} = electron;
+const { app, BrowserWindow, powerSaveBlocker } = electron;
 // noinspection JSUnusedLocalSymbols
 const ZOOM = parseFloat(process.env.ZOOM) || 1.0;
 let screenDimensions;
@@ -44,12 +44,12 @@ function prepareScreen() {
     // Set the main screen by getting the dimensions
     const mainScreen = electron.screen.getPrimaryDisplay();
     screenDimensions = mainScreen.size;
-    console.log("The screen dimensions are: ", screenDimensions);
+    console.log("The screen dimensions are:", screenDimensions);
 
     // Block the system from entering sleep mode
     const psbIdentifier = powerSaveBlocker.start("prevent-display-sleep");
     let willStayAwake = powerSaveBlocker.isStarted(psbIdentifier);
-    console.log("The display will be kept alive: ", willStayAwake);
+    console.log("The display will be kept alive:", willStayAwake);
 }
 
 function createSlides() {
@@ -68,20 +68,15 @@ function createSlides() {
 
 let changeSlides;
 changeSlides = async () => {
-    if (items[0].length === 1) {
-        SLIDE_1.show();
-        console.log("Showing slide 1 of 1");
-    } else {
-        let currentSlide = 1;
-        for (const item of items[0]) {
-            eval("SLIDE_" + currentSlide + ".show()");
-            console.log("Showing slide", currentSlide, "of", items[0].length, "for", items[1][currentSlide - 1], "seconds");
-            await displayTimeout(items[1][currentSlide - 1]);
-            eval("SLIDE_" + currentSlide + ".hide()");
-            currentSlide++;
-        }
-        changeSlides();
+    let currentSlide = 1;
+    for (const item of items[0]) {
+        eval("SLIDE_" + currentSlide + ".show()");
+        console.log("Showing slide", currentSlide, "of", items[0].length, "for", items[1][currentSlide - 1], "seconds");
+        await displayTimeout(items[1][currentSlide - 1]);
+        eval("SLIDE_" + currentSlide + ".reload()");
+        currentSlide++;
     }
+    changeSlides();
 };
 
 function displayTimeout(time) {
