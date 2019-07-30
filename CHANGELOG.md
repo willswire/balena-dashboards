@@ -2,6 +2,9 @@
 
 All entries are made manually. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 6.0.0 - 2019-6-30
+- Update ElectronJS to v6.0.0 [Will Walker]
+
 ## 5.0.0 - 2019-6-28
 - Complete restructure of main.js
     - Utilization of powerSaveBlocker to keep display alive [Kyle O'Donnell]

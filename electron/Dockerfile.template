@@ -5,7 +5,10 @@ RUN install_packages \
   # X Dependencies
     xorg \
     x11vnc \
+    cups-client \
     xserver-xorg-video-all \
+    xserver-xorg-video-intel \
+    xserver-xorg-video-radeon \
   # ElectronJS Dependencies
     clang \
     libnss3-dev \
