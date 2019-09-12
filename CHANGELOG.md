@@ -2,6 +2,9 @@
 
 All entries are made manually. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 6.1.0 - 2019-9-12
+- Include Intel video drivers for the new WYSE 3040 [Will Walker]
+
 ## 6.0.0 - 2019-6-30
 - Update ElectronJS to v6.0.0 [Will Walker]
 

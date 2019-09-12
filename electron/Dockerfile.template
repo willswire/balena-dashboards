@@ -8,7 +8,6 @@ RUN install_packages \
     cups-client \
     xserver-xorg-video-all \
     xserver-xorg-video-intel \
-    xserver-xorg-video-radeon \
   # ElectronJS Dependencies
     clang \
     libnss3-dev \
