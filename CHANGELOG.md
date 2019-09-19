@@ -2,6 +2,11 @@
 
 All entries are made manually. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 7.0.0 - 2019-9-19
+- Remove old Intel video driver package [Will Walker]
+- Add new container "networking" that configures the DNS servers for HostOS dnsmasq service [Will Walker]
+- Update ElectronJS to v6.0.10 [Will Walker]
+
 ## 6.1.0 - 2019-9-12
 - Include Intel video drivers for the new WYSE 3040 [Will Walker]
 

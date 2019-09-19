@@ -3,17 +3,17 @@ FROM balenalib/%%BALENA_MACHINE_NAME%%-node:buster
 # Install software packages
 RUN install_packages \
   # X Dependencies
-    xorg \
-    x11vnc \
-    cups-client \
-    xserver-xorg-video-all \
+  xorg \
+  x11vnc \
+  cups-client \
+  xserver-xorg-video-all \
   # ElectronJS Dependencies
-    clang \
-    libnss3-dev \
-    libgtk-3-dev \
-    libnotify-dev \
-    libasound2-dev \
-    gnome-keyring
+  clang \
+  libnss3-dev \
+  libgtk-3-dev \
+  libnotify-dev \
+  libasound2-dev \
+  gnome-keyring
 
 # Move to app dir
 WORKDIR /usr/src/app
