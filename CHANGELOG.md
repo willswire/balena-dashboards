@@ -2,6 +2,11 @@
 
 All entries are made manually. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 8.0.0 - 2019-10-23
+- Update ElectronJS to v7.0.0 [Will Walker]
+- Restructure electron docker container [Will Walker]
+- Allow a singular URL to not refresh [Will Walker]
+
 ## 7.0.0 - 2019-9-19
 - Remove old Intel video driver package [Will Walker]
 - Add new container "networking" that configures the DNS servers for HostOS dnsmasq service [Will Walker]

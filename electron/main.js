@@ -2,9 +2,13 @@ console.log("Starting dashboard...");
 const electron = require("electron");
 const envObjectParser = require('env-object-parser'); //allows for the searching of specific ENVs
 const converter = require('number-to-words'); //Used for Conversion of 1s and 2s to "One"s and "Two"s
-// noinspection JSUnusedLocalSymbols
-const { app, BrowserWindow, powerSaveBlocker } = electron;
-// noinspection JSUnusedLocalSymbols
+
+const {
+    app,
+    BrowserWindow,
+    powerSaveBlocker
+} = electron;
+
 const ZOOM = parseFloat(process.env.ZOOM) || 1.0;
 let screenDimensions;
 
@@ -18,7 +22,10 @@ const times = envObjectParser(process.env, {
 
 let numberOfSlides = Object.keys(urls).length;
 
-let items = [[], []];
+let items = [
+    [],
+    []
+];
 
 for (let i = 1; i <= numberOfSlides; i++) {
     const value = converter.toWords(i);
@@ -35,6 +42,7 @@ let browserWindowSettings = " = new BrowserWindow({\n" +
     "        width: screenDimensions.width,\n" +
     "        height: screenDimensions.height,\n" +
     "        kiosk: true,\n" +
+    "        frame: false,\n" +
     "        webPreferences: {\n" +
     "            zoomFactor: ZOOM\n" +
     "        }\n" +
@@ -69,14 +77,18 @@ function createSlides() {
 let changeSlides;
 changeSlides = async () => {
     let currentSlide = 1;
-    for (const item of items[0]) {
+    if (items[0].length > 1) {
+        for (const item of items[0]) {
+            eval("SLIDE_" + currentSlide + ".show()");
+            console.log("Showing slide", currentSlide, "of", items[0].length, "for", items[1][currentSlide - 1], "seconds");
+            await displayTimeout(items[1][currentSlide - 1]);
+            eval("SLIDE_" + currentSlide + ".reload()");
+            currentSlide++;
+        }
+        changeSlides();
+    } else {
         eval("SLIDE_" + currentSlide + ".show()");
-        console.log("Showing slide", currentSlide, "of", items[0].length, "for", items[1][currentSlide - 1], "seconds");
-        await displayTimeout(items[1][currentSlide - 1]);
-        eval("SLIDE_" + currentSlide + ".reload()");
-        currentSlide++;
     }
-    changeSlides();
 };
 
 function displayTimeout(time) {
