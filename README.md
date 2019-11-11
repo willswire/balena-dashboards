@@ -43,7 +43,7 @@ The following `Enviroment Variables` must be set within Application > Device und
 | `URL_[...]`    | `infinte URLs to load`  |
 | `TIME_[...]`    | `corresponding time values for each URL`  |
 | `NOVNC_PASSWORD` | `defaultpassword` *[obviously change this to something different]* |
-| `TZ` | `America/New_York` *[obviously change this to your timezone, see (Wikipedia)[https://en.wikipedia.org/wiki/List_of_tz_database_time_zones] for your TZ* |
+| `TZ` | `America/New_York` *[obviously change this to your timezone, see [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for your TZ* |
 
 In order to view the device remotely from within your browser, enable the public device URL within the device summary page.  Then, you can simply click the link and login using the password set above.
 
