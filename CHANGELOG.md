@@ -2,6 +2,9 @@
 
 All entries are made manually. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 8.0.2 - 2019-10-23
+- Rollback to v6 of ElectronJS [Michal Ruda]
+
 ## 8.0.1 - 2019-10-23
 - Add the hostname entry to the /etc/hosts file
 
