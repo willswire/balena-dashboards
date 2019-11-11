@@ -1,6 +1,6 @@
 {
   "name": "balena-dashboards",
-  "version": "8.0.1",
+  "version": "8.0.2",
   "description": "ElectronJS Balena Application",
   "main": "main.js",
   "scripts": {
@@ -16,7 +16,7 @@
   "author": "Will Walker",
   "license": "Apache-2.0",
   "dependencies": {
-    "electron": "7",
+    "electron": "^6",
     "env-object-parser": "^1.1.0",
     "number-to-words": "^1.2.4"
   }
