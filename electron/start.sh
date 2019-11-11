@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Echo the localhost value
+echo "Setting hostname..."
+echo "127.0.0.1 $HOSTNAME" >> /etc/hosts
+
 # By default docker gives us 64MB of shared memory size but we need more for visuals
 umount /dev/shm && mount -t tmpfs shm /dev/shm
 echo "Increased memory allocation"

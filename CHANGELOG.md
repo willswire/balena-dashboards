@@ -2,6 +2,9 @@
 
 All entries are made manually. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 8.0.1 - 2019-10-23
+- Add the hostname entry to the /etc/hosts file
+
 ## 8.0.0 - 2019-10-23
 - Update ElectronJS to v7.0.0 [Will Walker]
 - Restructure electron docker container [Will Walker]
