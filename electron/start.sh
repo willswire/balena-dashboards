@@ -1,37 +1,28 @@
 #!/bin/bash
 
-# Echo the localhost value
-echo "Setting hostname..."
+## Initalizing code
+# Echo the localhost value into the hosts file
 echo "127.0.0.1 $HOSTNAME" >> /etc/hosts
 
-# By default docker gives us 64MB of shared memory size but we need more for visuals
+# By default docker gives us 64MB of shared memory size but we need more!
 umount /dev/shm && mount -t tmpfs shm /dev/shm
-echo "Increased memory allocation"
 
-# Remove any temp data
+# Remove any temp data stored for X Org
 rm /tmp/.X0-lock &>/dev/null || true
-echo "Removed temporary startx data"
 
 # Check to see if the noVNC_PASSWORD has been set
 if [[ -z "${NOVNC_PASSWORD}" ]]; then
       while :; do
-            echo "Dashboard failed to start"
             echo -e "\e[33mThe \$NOVNC_PASSWORD variable is empty and needs to be set\e[0m"
             sleep 30
       done
-
-else
-      echo "\$NOVNC_PASSWORD is set"
 fi
 
 # Set the X11VNC Password
-echo "Storing X11 VNC password..."
 mkdir ~/.x11vnc
 x11vnc -quiet -storepasswd ${NOVNC_PASSWORD} ~/.x11vnc/passwd
 
-echo "Setup complete"
-
-# Start the UI pointing to ElectronJS
+## Start X Org running ElectronJS, and run x11vnc to allow connections over public device URL
 startx /usr/src/app/node_modules/electron/dist/electron /usr/src/app --no-sandbox -- -nocursor &
 P1=$!
 x11vnc -find -quiet -forever -localhost -rfbauth ~/.x11vnc/passwd &

@@ -2,6 +2,11 @@
 
 All entries are made manually. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 9.0.0 - 2020-3-22
+- Upgrade ElectronJS from v6 to v8 [Will Walker]
+- Remove 'networking' container, as its use is for University of Delaware devices only [Will Walker]
+- Simplify output in electron\start.sh
+
 ## 8.0.2 - 2019-10-23
 - Rollback to v6 of ElectronJS [Michal Ruda]
 

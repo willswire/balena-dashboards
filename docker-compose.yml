@@ -14,11 +14,4 @@ services:
     network_mode: host
     privileged: true
     restart: always
-  networking:
-    build: networking
-    network_mode: host
-    privileged: true
-    restart: no
-    labels:
-      io.balena.features.dbus: '1'
 
