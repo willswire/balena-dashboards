@@ -1,5 +1,10 @@
 # balena-dashboards
 
+# donating
+Please consider donating to this project!
+
+<a href="https://www.buymeacoffee.com/williamwalker" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
 > This project is a simple solution for managing multiple digital signage displays, dashboards, and other dynamic statistical data on raspberry-pi (or x86-x64 arch) powered displays, via one central admin panel. This project is intended for use in conjunction with balena.io (see below for link and account setup instructions).
 
 You may be asking,*"What makes this dashboard project better than others?"*
