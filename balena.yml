@@ -1,0 +1,15 @@
+version: "2"
+slug: "balena-dashboards"
+name: "balenaDashboards"
+type: "sw.application"
+assets:
+  - url: "https://github.com/willswire/balena-dashboards"
+    name: "repository"
+  - url: "https://raw.githubusercontent.com/willswire/balena-dashboards/master/logo.png"
+    name: "logo"
+data:
+  description: "Display "
+  applicationEnvironmentVariables:
+  defaultDeviceType: "raspberrypi3"
+  supportedDeviceTypes:
+    - "raspberrypi3"
